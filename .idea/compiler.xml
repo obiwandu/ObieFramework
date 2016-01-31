@@ -33,7 +33,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JAVAFRAME_chapter2" target="1.6" />
       <module name="JAVAFRAME_chapter3" target="1.6" />
     </bytecodeTargetLevel>
   </component>
