@@ -16,4 +16,8 @@ public class StringUtil {
     public static boolean isNotEmpty(String str) {
         return !isEmpty(str);
     }
+
+    public static String[] splitString(String src, String pat) {
+        return src.split(pat);
+    }
 }
