@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
  * Created by User on 2/16/2016.
  */
 public abstract class AspectProxy implements Proxy {
-    private static final Logger logger = LoggerFactory.getLogger(AspectProxy.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AspectProxy.class);
 
     @Override
     public final Object doProxy(ProxyChain proxyChain) throws Throwable {
@@ -29,7 +29,7 @@ public abstract class AspectProxy implements Proxy {
                 result = proxyChain.doProxyChain();
             }
         } catch (Exception e) {
-            logger.error("proxy failure", e);
+            LOGGER.error("proxy failure", e);
             error(cls, method, params, e);
             throw e;
         } finally {
