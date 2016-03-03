@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by User on 1/31/2016.
  */
-public class IocHelper {
+public final class IocHelper {
     static {
         Map<Class<?>, Object> beanMap = BeanHelper.getBeanMap();
         if (CollectionUtil.isNotEmpty(beanMap)) {

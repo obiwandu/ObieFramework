@@ -22,7 +22,7 @@ public final class ControllerHelper {
         if (CollectionUtil.isNotEmpty(controllerClassSet)) {
             for (Class<?> controllerClass : controllerClassSet) {
                 Method[] methods = controllerClass.getDeclaredMethods();
-                if (ArrayUtil.isEmpty(methods)) {
+                if (ArrayUtil.isNotEmpty(methods)) {
                     for (Method method : methods) {
                         if (method.isAnnotationPresent(Action.class)) {
                             Action action = method.getAnnotation(Action.class);

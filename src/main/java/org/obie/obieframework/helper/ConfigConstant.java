@@ -4,13 +4,13 @@ package org.obie.obieframework.helper;
  * Created by User on 1/14/2016.
  */
 public interface ConfigConstant {
-    String CONFIG_FILE = "smart.properties";
-    String JDBC_DRIVER = "smart.framework.jdbc.driver";
-    String JDBC_URL = "smart.framework.jdbc.url";
-    String JDBC_USERNAME = "smart.framework.jdbc.username";
-    String JDBC_PASSWORD = "smart.framework.jdbc.password";
+    String CONFIG_FILE = "framework.properties";
+    String JDBC_DRIVER = "framework.jdbc.driver";
+    String JDBC_URL = "framework.jdbc.url";
+    String JDBC_USERNAME = "framework.jdbc.username";
+    String JDBC_PASSWORD = "framework.jdbc.password";
 
-    String APP_BASE_PACKAGE = "smart.framework.app.base_package";
-    String APP_JSP_PATH = "smart.framework.app.jsp_path";
-    String APP_ASSET_PATH = "smart.framework.app.asset_path";
+    String APP_BASE_PACKAGE = "framework.app.base_package";
+    String APP_JSP_PATH = "framework.app.jsp_path";
+    String APP_ASSET_PATH = "framework.app.asset_path";
 }

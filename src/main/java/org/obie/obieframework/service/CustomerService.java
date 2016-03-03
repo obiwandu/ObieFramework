@@ -1,6 +1,8 @@
 package org.obie.obieframework.service;
 
 ;
+import org.obie.obieframework.annotation.Service;
+import org.obie.obieframework.annotation.Transaction;
 import org.obie.obieframework.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +15,11 @@ import java.util.Map;
 /**
  * Created by User on 12/6/2015.
  */
+@Service
 public class CustomerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
+    @Transaction
     public List<Customer> getCustomerList() {
         List<Customer> customerList = new ArrayList<Customer>();
         String sql = "SELECT * FROM customer";

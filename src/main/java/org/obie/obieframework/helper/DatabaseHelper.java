@@ -60,13 +60,15 @@ public class DatabaseHelper {
 
     public static Connection getConnection() {
         Connection conn = CONNECTION_HOLDER.get();
-        try {
-            conn = DATA_SOURCE.getConnection();
-        } catch (SQLException e) {
-            LOGGER.error("get connection failure", e);
-            throw new RuntimeException(e);
-        } finally {
-            CONNECTION_HOLDER.set(conn);
+        if (conn == null) {
+            try {
+                conn = DATA_SOURCE.getConnection();
+            } catch (SQLException e) {
+                LOGGER.error("get connection failure", e);
+                throw new RuntimeException(e);
+            } finally {
+                CONNECTION_HOLDER.set(conn);
+            }
         }
         return conn;
     }
@@ -203,12 +205,12 @@ public class DatabaseHelper {
         if (conn != null) {
             try {
                 conn.commit();
-                conn.close();
+                //conn.close();
             } catch (SQLException e) {
                 LOGGER.error("commit transaction failure", e);
                 throw new RuntimeException(e);
             } finally {
-                CONNECTION_HOLDER.remove();
+                //CONNECTION_HOLDER.remove();
             }
         }
     }
@@ -218,12 +220,12 @@ public class DatabaseHelper {
         if (conn != null) {
             try {
                 conn.rollback();
-                conn.close();
+                //conn.close();
             } catch (SQLException e) {
                 LOGGER.error("rollback transaction failure", e);
                 throw new RuntimeException(e);
             } finally {
-                CONNECTION_HOLDER.remove();
+                //CONNECTION_HOLDER.remove();
             }
         }
     }

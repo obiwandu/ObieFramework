@@ -28,6 +28,8 @@ public class ClassUtil {
         Class<?> cls;
         try {
             cls = Class.forName(className, isInitialized, getClassLoader());
+            //cls = getClassLoader().loadClass(className);
+            //cls = Class.forName(className);
         } catch (ClassNotFoundException e) {
             LOGGER.error("load class failure", e);
             throw new RuntimeException(e);
@@ -44,7 +46,7 @@ public class ClassUtil {
                 URL url = urls.nextElement();
                 if (url != null) {
                     String protocol = url.getProtocol();
-                    if (protocol.equals("files")) {
+                    if (protocol.equals("file")) {
                         String packagePath = url.getPath().replaceAll("%20", " ");
                         addClass(classSet, packagePath, packageName);
                     } else if (protocol.equals("jar")) {
@@ -93,7 +95,8 @@ public class ClassUtil {
             } else {
                 String subPackagePath = fileName;
                 if (StringUtil.isNotEmpty(packagePath)) {
-                    subPackagePath = packagePath + "/" + subPackagePath;
+                    //subPackagePath = packagePath + "/" + subPackagePath;
+                    subPackagePath = packagePath + subPackagePath;
                 }
                 String subPackageName = fileName;
                 if (StringUtil.isNotEmpty(packageName)) {

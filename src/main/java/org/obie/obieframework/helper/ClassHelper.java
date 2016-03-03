@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * Created by User on 1/14/2016.
  */
-public class ClassHelper {
+public final class ClassHelper {
     private static final Set<Class<?>> CLASS_SET;
 
     static {
