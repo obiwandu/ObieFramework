@@ -39,21 +39,23 @@
 <h3>
 <a id="Get started" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Get started</h3>
 
-<p>To build a basic WEB application with this framework, you only need to do 4 things.</p>
+<p>To build a basic WEB application with this framework, you only need to do 4 steps.</p>
 
-<h5>1. Design your database and define the model file. </h5>
+<h5>1. Design your database scheme, configure the database and define the model class. </h5>
+<p>We put data configuration in the form of configuration file. By configuring config.properties, you can specify the database you want to use. Then create a database and some tables as you want, and create model classes for them.</p>
 
+<img src="img/config.jpg" />
 <img src="img/scheme.jpg" />
 <img src="img/model.jpg" />
 
 <h5>2. Define a controller. </h5>
-<p>Use "Controller" annotation to decorate the controller class, and use "Inject" annotation to decorate the object initailized by the framework. The "Action" annotation specifies the request method and path by its parameter.</p>
+<p>Use "Controller" annotation to decorate the controller class, and use "Inject" annotation to decorate the object initailized by the framework. The "Action" annotation specifies the request method and path by its parameter. The View object returned by the method contains the path of JSP page, and you can add parameters to this page by the View.addModel method.</p>
 
 <img src="img/controller.jpg" />
 
 <h5>3. Define a service. </h5>
 
-<p>Use "Service annotation to decorate the service class. Add "Transaction" annotation to provide transaction feature to current method.</p>
+<p>Use "Service" annotation to decorate the service class. Add "Transaction" annotation to provide transaction feature to current method.</p>
 
 <img src="img/service.jpg" />
 
